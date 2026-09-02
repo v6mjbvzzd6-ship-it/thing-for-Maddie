@@ -1,5 +1,4 @@
 // July 1st 2024
-
 const anniversaryDate = new Date(2024, 6, 1);
 
 const reasons = [
@@ -10,6 +9,39 @@ const reasons = [
     "You're my favorite person to talk to",
     "You make ordinary days feel special"
 ];
+
+const funnyMessages = [
+    "Nope! Try again before I revoke your girlfriend privileges 😤",
+    "Wrong! Do you even know me?? (kidding, try again) 💀",
+    "Access denied. The relationship is under review 🕵️",
+    "That's cute but incorrect. Try again bb 💗",
+    "Denied! I'm telling on you to your mom 😭"
+];
+
+function normalize(str){
+    return str.toLowerCase().trim().replace(/[’']/g, "'").replace(/\s+/g, " ");
+}
+
+function checkAnswers(){
+    const q1 = normalize(document.getElementById("q1").value);
+    const q2 = normalize(document.getElementById("q2").value);
+    const q3 = normalize(document.getElementById("q3").value);
+
+    const q1Correct = q1 === "july 1" || q1 === "july 1st";
+    const q2Correct = q2 === "danthony" || q2 === "d'anthony";
+    const q3Correct = q3 === "red";
+
+    if (q1Correct && q2Correct && q3Correct){
+        document.getElementById("quiz-screen").classList.add("hidden");
+        document.getElementById("main-content").classList.remove("hidden");
+    } else {
+        const randomMsg = funnyMessages[Math.floor(Math.random() * funnyMessages.length)];
+        document.getElementById("quiz-message").textContent = randomMsg;
+        document.getElementById("q1").value = "";
+        document.getElementById("q2").value = "";
+        document.getElementById("q3").value = "";
+    }
+}
 
 function showReason(){
     const randomIndex = Math.floor(Math.random() * reasons.length);
@@ -29,7 +61,7 @@ function updateCountdown(){
     const hours = Math.floor((diff / (1000*60*60)) % 24);
     const minutes = Math.floor((diff / (1000*60)) % 60);
 
-    document.getElementById("countdown").textContent = `${days}d ${hours}h ${minutes}m`;
+    document.getElementById("countdown").textContent = `${days}d ${hours}h ${minutes}m`;
 }
 
 updateCountdown();
