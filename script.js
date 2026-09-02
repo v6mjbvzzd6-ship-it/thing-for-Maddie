@@ -41,7 +41,7 @@ function checkAnswers(){
 
     if (q1Correct && q2Correct && q3Correct){
         document.getElementById("quiz-screen").style.display = "none";
-        document.getElementById("main-content").style.display = "block";
+        document.getElementById("main-content").style.display = "flex";
     } else {
         const randomMsg = funnyMessages[Math.floor(Math.random() * funnyMessages.length)];
         document.getElementById("quiz-message").textContent = randomMsg;
