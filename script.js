@@ -19,7 +19,7 @@ const funnyMessages = [
 ];
 
 function normalize(str){
-    return str.toLowerCase().trim().replace(/[’']/g, "'").replace(/\s+/g, " ");
+    return str.toLowerCase().trim();
 }
 
 function checkAnswers(){
@@ -27,13 +27,13 @@ function checkAnswers(){
     const q2 = normalize(document.getElementById("q2").value);
     const q3 = normalize(document.getElementById("q3").value);
 
-    const q1Correct = q1 === "july 1" || q1 === "july 1st";
-    const q2Correct = q2 === "danthony" || q2 === "d'anthony";
-    const q3Correct = q3 === "red";
+    const q1Correct = (q1 === "july 1" || q1 === "july 1st");
+    const q2Correct = (q2 === "danthony" || q2 === "d'anthony" || q2 === "d'anthony");
+    const q3Correct = (q3 === "red");
 
     if (q1Correct && q2Correct && q3Correct){
-        document.getElementById("quiz-screen").classList.add("hidden");
-        document.getElementById("main-content").classList.remove("hidden");
+        document.getElementById("quiz-screen").style.display = "none";
+        document.getElementById("main-content").style.display = "block";
     } else {
         const randomMsg = funnyMessages[Math.floor(Math.random() * funnyMessages.length)];
         document.getElementById("quiz-message").textContent = randomMsg;
@@ -63,6 +63,9 @@ function updateCountdown(){
 
     document.getElementById("countdown").textContent = `${days}d ${hours}h ${minutes}m`;
 }
+
+document.getElementById("unlock-btn").addEventListener("click", checkAnswers);
+document.querySelector("#reason-box button").addEventListener("click", showReason);
 
 updateCountdown();
 setInterval(updateCountdown, 60000);
