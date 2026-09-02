@@ -8,23 +8,48 @@
 </head>
 <body>
 
-    <img src="left.jpeg" id="photo-left" alt="us">
+    <div id="quiz-screen">
+        <h1>💗 Prove It's You 💗</h1>
+        <p class="quiz-sub">Answer all 3 correctly to unlock your surprise</p>
 
-    <div id="container">
-        <h1>For My Love</h1>
-
-        <div id="countdown-box">
-            <p>Time until anniversary:</p>
-            <div id="countdown">Loading...</div>
+        <div class="quiz-question">
+            <label for="q1">When did we start dating? (Month Day)</label>
+            <input type="text" id="q1" placeholder="e.g. July 1">
         </div>
 
-        <div id="reason-box">
-            <p id="reason-display">Click below for a reason I love you</p>
-            <button onclick="showReason()">Give me a reason</button>
+        <div class="quiz-question">
+            <label for="q2">What's my middle name?</label>
+            <input type="text" id="q2" placeholder="Type it here">
         </div>
+
+        <div class="quiz-question">
+            <label for="q3">What's my favorite color?</label>
+            <input type="text" id="q3" placeholder="Type it here">
+        </div>
+
+        <button onclick="checkAnswers()">Unlock 🔓</button>
+        <p id="quiz-message"></p>
     </div>
 
-    <img src="right.jpeg" id="photo-right" alt="us">
+    <div id="main-content" class="hidden">
+        <img src="left.jpeg" id="photo-left" alt="us">
+
+        <div id="container">
+            <h1>For My Love</h1>
+
+            <div id="countdown-box">
+                <p>Time until anniversary:</p>
+                <div id="countdown">Loading...</div>
+            </div>
+
+            <div id="reason-box">
+                <p id="reason-display">Click below for a reason I love you</p>
+                <button onclick="showReason()">Give me a reason</button>
+            </div>
+        </div>
+
+        <img src="right.jpeg" id="photo-right" alt="us">
+    </div>
 
     <script src="script.js"></script>
 </body>
