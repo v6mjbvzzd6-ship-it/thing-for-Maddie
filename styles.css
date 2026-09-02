@@ -10,10 +10,7 @@ body{
     padding: 20px;
     box-sizing: border-box;
     position: relative;
-}
-
-.hidden{
-    display: none;
+    overflow-y: auto;
 }
 
 /* Quiz screen */
@@ -69,7 +66,7 @@ body{
     font-weight: bold;
 }
 
-/* Main content (unchanged from before) */
+/* Main content */
 #container{
     text-align: center;
     max-width: 500px;
@@ -104,7 +101,13 @@ h1{
     font-size: 1.3rem;
     min-height: 50px;
     color: hsl(350, 70%, 80%);
-    transition: opacity 0.3s ease;
+}
+
+#hug-display{
+    font-size: 1.1rem;
+    min-height: 30px;
+    color: hsl(350, 70%, 80%);
+    margin-top: 15px;
 }
 
 button{
@@ -126,6 +129,34 @@ button:hover{
 
 button:active{
     background-color: hsl(350, 70%, 35%);
+}
+
+#hug-btn{
+    background-color: hsl(280, 60%, 55%);
+    margin-top: 10px;
+}
+
+#hug-btn:hover{
+    background-color: hsl(280, 60%, 62%);
+}
+
+.floating-emoji{
+    position: fixed;
+    font-size: 2rem;
+    pointer-events: none;
+    animation: floatUp 2s ease-out forwards;
+    z-index: 999;
+}
+
+@keyframes floatUp{
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-150px) scale(1.5);
+        opacity: 0;
+    }
 }
 
 #photo-left, #photo-right{
