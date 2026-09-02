@@ -1,5 +1,5 @@
 // July 1st 2024
-const anniversaryDate = new Date(2024, 6, 1);
+const anniversaryDate = new Date(2024, 5, 1);
 
 const reasons = [
     "Your smile makes my whole day better",
@@ -35,7 +35,7 @@ function checkAnswers(){
     const q2 = normalize(document.getElementById("q2").value);
     const q3 = normalize(document.getElementById("q3").value);
 
-    const q1Correct = (q1 === "july 1" || q1 === "july 1st");
+    const q1Correct = (q1 === "june 1" || q1 === "june 1st");
     const q2Correct = (q2 === "danthony" || q2 === "d'anthony");
     const q3Correct = (q3 === "red");
 
