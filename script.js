@@ -1,4 +1,4 @@
-// July 1st 2024
+// June 1st 2024
 const anniversaryDate = new Date(2024, 5, 1);
 
 const reasons = [
