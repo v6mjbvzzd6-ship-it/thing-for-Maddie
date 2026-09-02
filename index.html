@@ -14,24 +14,24 @@
 
         <div class="quiz-question">
             <label for="q1">When did we start dating? (Month Day)</label>
-            <input type="text" id="q1" placeholder="e.g. July 1">
+            <input type="text" id="q1" placeholder="e.g. July 1" autocapitalize="off" autocorrect="off" spellcheck="false">
         </div>
 
         <div class="quiz-question">
             <label for="q2">What's my middle name?</label>
-            <input type="text" id="q2" placeholder="Type it here">
+            <input type="text" id="q2" placeholder="Type it here" autocapitalize="off" autocorrect="off" spellcheck="false">
         </div>
 
         <div class="quiz-question">
             <label for="q3">What's my favorite color?</label>
-            <input type="text" id="q3" placeholder="Type it here">
+            <input type="text" id="q3" placeholder="Type it here" autocapitalize="off" autocorrect="off" spellcheck="false">
         </div>
 
         <button type="button" id="unlock-btn">Unlock 🔓</button>
         <p id="quiz-message"></p>
     </div>
 
-    <div id="main-content" class="hidden">
+    <div id="main-content" style="display: none;">
         <img src="left.jpeg" id="photo-left" alt="us">
 
         <div id="container">
@@ -44,8 +44,10 @@
 
             <div id="reason-box">
                 <p id="reason-display">Click below for a reason I love you</p>
-                <button type="button">Give me a reason</button>
+                <button type="button" id="reason-btn">Give me a reason</button>
 
+                <p id="hug-display"></p>
+                <button type="button" id="hug-btn">Send me a hug 🤗</button>
             </div>
         </div>
 
